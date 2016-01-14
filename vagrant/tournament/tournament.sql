@@ -12,21 +12,16 @@ create database tournament;
 
 \c tournament;
 
-DROP TABLE IF EXISTS players;
-DROP TABLE IF EXISTS matches;
 
-CREATE TABLE players (   
+
+CREATE TABLE players (
 	ID  BIGSERIAL PRIMARY KEY NOT NULL,
-   NAME           TEXT      NOT NULL,
-   WINS INT NOT NULL,
-   MATCHES_PLAYED INT NOT NULL);
+   NAME           TEXT      NOT NULL);
 
 CREATE TABLE matches (   
 	ID  BIGSERIAL PRIMARY KEY NOT NULL,
-   ID_PLAYER1           INT      NOT NULL,
-   
-   ID_PLAYER2          INT      NOT NULL,
-   
+   ID_PLAYER1 INT REFERENCES players(ID),
+   ID_PLAYER2 INT REFERENCES players(ID),  
    OUTCOME INT NOT NULL);
 
 

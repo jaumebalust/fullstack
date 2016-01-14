@@ -141,7 +141,7 @@ def myOwnTournament():
     deleteMatches()
     deletePlayers()
     i = 0
-    while (i < 100) :
+    while (i < 32) :
 
         registerPlayer("Player " + str(i))
         i = i + 1
@@ -151,9 +151,7 @@ def myOwnTournament():
 
 
 if __name__ == '__main__':
-    # conn = connect()
-    # c = conn.cursor()
-    
+  
     testDeleteMatches()
     testDelete()
     testCount()
@@ -164,7 +162,7 @@ if __name__ == '__main__':
     testPairings()
     print "Success!  All tests pass!"
     print "Now let's play the actual tournament"
-    # myOwnTournament()
+    myOwnTournament()
 
     
 
